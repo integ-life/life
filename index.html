@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
+      rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap"
     />
     <title>Integ.Life App — Notes, tasks, people, money &amp; calendar</title>
@@ -31,12 +31,24 @@
         document.documentElement.setAttribute('data-theme', mode);
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-Dk6eRjjq.js"></script>
+    <style>
+      body { margin: 0; }
+      .startup-screen { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 24px; box-sizing: border-box; background: #0f172a; color: #f1f5f9; font: 16px/1.5 system-ui, sans-serif; text-align: center; }
+      .startup-mark { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 20px; background: #a5b4fc; color: #0f172a; font-size: 32px; font-weight: 800; }
+      .startup-screen strong { font-size: 24px; letter-spacing: -.02em; }
+      .startup-screen p { margin: 0; opacity: .8; }
+      .startup-bar { width: 160px; height: 4px; border-radius: 4px; background: #475569; overflow: hidden; }
+      .startup-bar::after { content: ''; display: block; width: 40%; height: 100%; background: #a5b4fc; animation: startup-progress 1.2s ease-in-out infinite alternate; }
+      @keyframes startup-progress { to { transform: translateX(150%); } }
+      @media (prefers-reduced-motion: reduce) { .startup-bar::after { animation: none; } }
+      [data-theme="light"] .startup-screen { background: #f8fafc; color: #0f172a; }
+    </style>
+    <script type="module" crossorigin src="/assets/index-BJtjQE8B.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-BzRbSWhq.js">
     <link rel="modulepreload" crossorigin href="/assets/i18n-B08huhVv.js">
     <link rel="modulepreload" crossorigin href="/assets/router-_Aev8VfS.js">
     <link rel="stylesheet" crossorigin href="/assets/vendor-7LSByb__.css">
-    <link rel="stylesheet" crossorigin href="/assets/index-B48xjrqA.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-DK_Cyew-.css">
       <meta name="description" content="Private notes, tasks, people, money, calendar and time tracking in one connected app." />
     <meta property="og:title" content="Integ.Life App — Notes, tasks, people, money &amp; calendar" />
     <meta property="og:description" content="Private notes, tasks, people, money, calendar and time tracking in one connected app." />
@@ -53,6 +65,6 @@
     <link rel="canonical" href="https://app.integ.life/" />
   <link rel="manifest" href="/manifest.webmanifest"></head>
   <body>
-    <div id="root"></div>
+    <div id="root"><main class="startup-screen" data-startup-screen role="status" aria-busy="true"><div class="startup-mark" aria-hidden="true">I</div><strong>Integ.Life</strong><p>Loading your workspace…</p><div class="startup-bar" aria-hidden="true"></div><noscript>Please enable JavaScript to open Integ.Life.</noscript></main></div>
   </body>
 </html>
