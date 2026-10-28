@@ -15,11 +15,11 @@ Pomodoros sit on top of `events` (which carry the time range). The phone, Mac, W
 
 ## Tools (MCP `life-on-golang`)
 
-- `pomodoros_list` — date range + optional todo filter; returns aligned `pomodoros` and `events` arrays
+- `pomodoros_list` — date range + optional todo filter, `limit` (default 50, max 200); returns aligned `pomodoros` and `events` arrays
 
 ## Patterns
 
-**Total focus time.** Sum `event.end_at - event.start_at` for the returned events. There's no pre-aggregated endpoint yet.
+**Total focus time.** Sum `event.end_at - event.start_at` for the returned events. There's no pre-aggregated endpoint yet. Always pass `since`/`until` and `limit: 200`; if exactly 200 rows come back the result may be truncated, so split the range and query again (or tell the user the total may be incomplete) instead of reporting a total.
 
 **Per-todo.** Pass `todo_uuid` to scope to a single task. Useful for *"how long did the X task actually take"*.
 

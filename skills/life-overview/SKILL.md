@@ -20,17 +20,18 @@ Fan out — issue these MCP calls in parallel:
 
 | Question | Tool | Args |
 |---|---|---|
-| Active todos | `todo_list` | `{}` |
+| Active todos | `todo_list` | `{ limit: 500 }` |
 | Overdue todos | `todo_list` | `{ due_before: <now> }` |
 | Active goals | `goals_list` | `{ status: "active" }` |
 | Recent moods | `status_logs_list` | `{ log_type: "mood", since: <7d ago> }` |
-| Recent focus time | `pomodoros_list` | `{ since: <7d ago> }` |
-| Recent spending | `money_list_transactions` | `{ since: <7d ago> }` |
+| Recent focus time | `pomodoros_list` | `{ since: <7d ago>, limit: 200 }` |
+| Recent spending | `money_list_transactions` | `{ since: <7d ago>, limit: 500 }` |
 
 Then synthesize: 3-5 sentence narrative, plus a short bulleted "watch outs" list (overdue todos, stale goals, mood streaks, unusual spending).
 
 ## Don't
 
 - Don't dump raw rows. The user wants the picture, not the data.
+- Don't report totals from data that may be truncated (returned rows == limit); say it may be incomplete.
 - Don't invent metrics. If you can't compute it from the tools above, say so.
 - Don't write to anything from this skill — delegate writes to the domain-specific skill (`life-todo`, `life-money`, etc.).
