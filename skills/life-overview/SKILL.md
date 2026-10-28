@@ -23,7 +23,7 @@ Fan out — issue these MCP calls in parallel:
 | Active todos | `todo_list` | `{ limit: 500 }` |
 | Overdue todos | `todo_list` | `{ due_before: <now> }` |
 | Active goals | `goals_list` | `{ status: "active" }` |
-| Recent moods | `status_logs_list` | `{ log_type: "mood", since: <7d ago> }` |
+| Recent moods | `thoughts_list` (`/mcp`) or `status_logs_list` (legacy `/mcp/v1`) | `{ log_type: "mood", since: <7d ago> }` |
 | Recent focus time | `pomodoros_list` | `{ since: <7d ago>, limit: 200 }` |
 | Recent spending | `money_list_transactions` | `{ since: <7d ago>, limit: 500 }` |
 

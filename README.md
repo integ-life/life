@@ -32,12 +32,19 @@ Seven skills, one per life domain. Each `SKILL.md` tells Claude *when* to trigge
 
 ```bash
 git clone git@github.com:integ-life/life.git ~/code/life-skills
+mkdir -p ~/.claude/skills
 for d in ~/code/life-skills/skills/life-*; do
-  ln -s "$d" ~/.claude/skills/
+  ln -sfn "$d" ~/.claude/skills/
 done
 ```
 
 Then point Claude Code at your integ.life MCP endpoint (`POST <your-host>/mcp/v1`) with a bearer token created from the app's *Settings → API Tokens* screen.
+
+Example registration (keep the token in an environment variable, never commit it):
+
+```bash
+claude mcp add --transport http life-on-golang https://api.integ.life/mcp/v1 --header "Authorization: Bearer $INTEGLIFE_API_TOKEN"
+```
 
 ## 🌐 Related
 

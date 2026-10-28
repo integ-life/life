@@ -15,7 +15,7 @@ Status logs are the user's lightweight journal — feelings, energy levels, end-
 
 ## Tools (MCP `life-on-golang`)
 
-- `status_logs_list` — filter by `log_type`, date range
+- `thoughts_list` (`/mcp` endpoint) or `status_logs_list` (legacy `/mcp/v1`) — same parameters: filter by `log_type`, date range
 - `status_logs_add` — record a new entry
 
 ## Patterns

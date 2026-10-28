@@ -32,12 +32,19 @@
 
 ```bash
 git clone git@github.com:integ-life/life.git ~/code/life-skills
+mkdir -p ~/.claude/skills
 for d in ~/code/life-skills/skills/life-*; do
-  ln -s "$d" ~/.claude/skills/
+  ln -sfn "$d" ~/.claude/skills/
 done
 ```
 
 然后在 Claude Code 里配置你的 integ.life MCP 端点（`POST <your-host>/mcp/v1`），bearer token 在 app 的 *设置 → API Tokens* 页面里生成。
+
+注册示例（token 放在环境变量里，切勿提交到仓库）：
+
+```bash
+claude mcp add --transport http life-on-golang https://api.integ.life/mcp/v1 --header "Authorization: Bearer $INTEGLIFE_API_TOKEN"
+```
 
 ## 🌐 相关项目
 
