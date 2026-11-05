@@ -2,6 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Restore GitHub Pages deep links before the existing HashRouter starts.
+      (function() {
+        if (window.location.pathname !== '/') return;
+        var route = new URLSearchParams(window.location.search).get('__integ_spa');
+        if (route && route.charAt(0) === '/' && route.charAt(1) !== '/' && route.indexOf('\\') === -1) {
+          window.history.replaceState(null, '', '/#' + route);
+        }
+      })();
+    </script>
     <link rel="icon" href="/integ-life-app.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/logo192.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -43,7 +53,7 @@
       @media (prefers-reduced-motion: reduce) { .startup-bar::after { animation: none; } }
       [data-theme="light"] .startup-screen { background: #f8fafc; color: #0f172a; }
     </style>
-    <script type="module" crossorigin src="/assets/index-VZOxWcjQ.js"></script>
+    <script type="module" crossorigin src="/assets/index-BcKnQTC9.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-CL3u4hOG.js">
     <link rel="modulepreload" crossorigin href="/assets/i18n-BGdmkmSG.js">
     <link rel="modulepreload" crossorigin href="/assets/router-CdHUqkYC.js">
