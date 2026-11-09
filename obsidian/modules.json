@@ -2,12 +2,12 @@
   {
     "id": "integ-notes",
     "name": "Integ.Life Notes",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Preserve Markdown, note identity, and conflicting edits when syncing Integ.Life Notes.",
     "icon": "notebook-pen",
-    "main": "https://app.integ.life/obsidian/modules/integ-notes-0.1.2.js",
+    "main": "https://app.integ.life/obsidian/modules/integ-notes-0.1.3.js",
     "minPluginVersion": "3.3.0",
     "readme": "https://app.integ.life/#/settings/obsidian",
-    "integrity": "9abb46e35d6f3ee6c93c67f396d09d38be4fa0a1aac2a7487518c8004d39113a"
+    "integrity": "d94f88a20c86590dc257561c3b2abf2b81cda9706e5874627cdd80f4d824d705"
   }
 ]
